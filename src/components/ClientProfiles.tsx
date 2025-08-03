@@ -3,7 +3,15 @@
 import React, { useState, useEffect } from 'react';
 import './ClientProfiles.css';
 
-const profiles = [
+type Profile = {
+  title: string;
+  hook: string;
+  points: string[];
+  quote: string;
+  fit: string;
+};
+
+const profiles: Profile[] = [
   {
     title: 'The Reflective Undershooter',
     hook: 'You know what’s wrong. You just can’t act on it.',
@@ -55,48 +63,42 @@ const profiles = [
 ];
 
 export default function ClientProfiles() {
-  const [activeProfile, setActiveProfile] = useState<null | typeof profiles[0]>(null);
+  const [activeProfile, setActiveProfile] = useState<Profile | null>(null);
 
-  // Lock scroll & listen for Escape key
   useEffect(() => {
-    if (activeProfile) {
-      document.body.style.overflow = 'hidden';
+    if (!activeProfile) return;
+    document.body.style.overflow = 'hidden';
 
-      const handleKey = (e: KeyboardEvent) => {
-        if (e.key === 'Escape') setActiveProfile(null);
-      };
-      window.addEventListener('keydown', handleKey);
-      return () => {
-        window.removeEventListener('keydown', handleKey);
-        document.body.style.overflow = '';
-      };
-    }
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setActiveProfile(null);
+    };
+
+    window.addEventListener('keydown', handleEscape);
+    return () => {
+      document.body.style.overflow = '';
+      window.removeEventListener('keydown', handleEscape);
+    };
   }, [activeProfile]);
 
   return (
-    <section className="client-profiles" data-bg="teal">
+    <section className="client-profiles">
       <h2>Designed for People Who…</h2>
-
       <div className="profile-scroll-container">
-        {profiles.map((p) => (
-          <div key={p.title} className="profile-card">
-            <h3>{p.title}</h3>
-            <p className="hook">{p.hook}</p>
-            <button className="read-more" onClick={() => setActiveProfile(p)}>
-              → Read More
-            </button>
+        {profiles.map((profile) => (
+          <div
+            key={profile.title}
+            className="profile-card"
+            onClick={() => setActiveProfile(profile)}
+          >
+            <h3>{profile.title}</h3>
           </div>
         ))}
       </div>
 
-      <a href="/diagnostic" className="cta">→ Start the Diagnostic</a>
-
       {activeProfile && (
         <div className="modal-overlay" onClick={() => setActiveProfile(null)}>
-          <div className="modal fade-in" onClick={(e) => e.stopPropagation()}>
-            <button className="close-button" onClick={() => setActiveProfile(null)}>
-              ×
-            </button>
+          <div className="modal" onClick={(e) => e.stopPropagation()}>
+            <button className="close-button" onClick={() => setActiveProfile(null)}>×</button>
             <h3>{activeProfile.title}</h3>
             <p className="hook">{activeProfile.hook}</p>
             <ul>

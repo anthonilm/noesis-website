@@ -1,36 +1,27 @@
 .performance-rationale {
-  background: var(--bone);
-  color: var(--carbon);
-  padding: 5rem 2rem;
+  padding: 6rem 2rem;
   text-align: center;
-}
-
-.rationale-content {
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-.performance-rationale .lead-line {
-  font-size: 0.95rem;
-  color: var(--rust);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  margin-bottom: 0.75rem;
+  color: var(--bone);
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .performance-rationale h2 {
   font-size: 2rem;
   font-weight: 600;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--pastel-sage);
 }
 
 .rationale-list {
   list-style: none;
   padding: 0;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
+  margin-top: 2rem;
   font-size: 1.1rem;
   line-height: 1.6;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--bone);
 }

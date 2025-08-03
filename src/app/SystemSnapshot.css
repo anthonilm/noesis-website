@@ -17,10 +17,11 @@
 
 .snapshot-block {
   grid-column: span 6;
-  background-color: rgba(10, 10, 10, 0.8); /* semi-transparent carbon */
+  background-color: rgba(0, 0, 0, 0.6); /* softened dark backdrop */
   padding: 2rem;
   border-radius: 12px;
   transition: background 0.3s ease;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
 }
 
 .snapshot-title {
@@ -42,7 +43,7 @@
   justify-content: space-around;
   flex-wrap: wrap;
   gap: 2rem;
-  background-color: rgba(10, 10, 10, 0.7);
+  background-color: rgba(0, 0, 0, 0.5);
   padding: 2rem;
   border-radius: 12px;
 }

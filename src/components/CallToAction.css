@@ -1,41 +1,39 @@
 .cta-section {
-  /* Remove fixed background color */
-  background-color: transparent;
-
-  /* Optional backdrop filter to soften gradient underneath */
-  backdrop-filter: blur(4px);
-
-  /* Adaptive text color for darker background zones */
-  color: var(--bone);
-
-  padding: 5rem 2rem;
-  text-align: center;
+  width: 100%;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  padding: 6rem 2rem;
+  background-color: var(--carbon);
 }
 
-.cta-content {
-  max-width: 720px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+.cta-box {
+  border: 1px solid var(--pastel-sage);
+  padding: 3rem;
+  border-radius: 16px;
+  text-align: center;
+  backdrop-filter: blur(4px);
+  background: rgba(10, 10, 10, 0.6);
+  transition: all 0.3s ease;
 }
 
-.cta-content h2 {
-  font-size: 2rem;
-  line-height: 1.4;
-  font-weight: 600;
+.cta-box h2 {
+  color: var(--bone);
+  font-size: 1.75rem;
+  margin-bottom: 2rem;
 }
 
-.cta-content p {
-  font-size: 1.125rem;
-  opacity: 0.9;
-  line-height: 1.6;
+.cta-button {
+  background-color: transparent;
+  border: 1px solid var(--pastel-sage);
+  color: var(--bone);
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-/* Inherits existing .cta button styles */
-.cta-content .cta {
-  align-self: center;
+.cta-button:hover {
+  background-color: var(--pastel-sage);
+  color: var(--carbon);
 }

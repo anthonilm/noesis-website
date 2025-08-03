@@ -1,14 +1,17 @@
 :root {
+  --hidden-gem: #4A5E65; /* solid background */
   --carbon: #0A0A0A;
-  --graphite: #2E2E2E;
-  --olive: #667752;
-  --rust: #C56738;
   --bone: #ECE8E1;
+  --rust: #C56738;
+  --pastel-sage: #b7c4a9; /* soft masculine pastel */
 
-  /* New gradient colors */
-  --deep-blue: #0B1A2A;
-  --mid-blue: #11435C;
-  --teal: #1C7F7F;
+
+  /* Masculine Pastel Accents */
+  --pastel-sage: #B6C4A2;
+  --pastel-cadet: #A8BFCF;
+  --pastel-terracotta: #D7A797;
+  --pastel-dusty-lavender: #C1B5C5;
+  --pastel-sand: #DDD1BA;
 }
 
 * {
@@ -18,14 +21,19 @@
   scroll-behavior: smooth;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
   color: var(--bone);
-  line-height: 1.6;
+  background-color: var(--hidden-gem);
   min-height: 100vh;
-  background-color: var(--deep-blue); /* fallback */
+  line-height: 1.6;
 }
 
+/* Layout elements */
 a {
   color: inherit;
   text-decoration: none;
@@ -35,92 +43,10 @@ ul {
   list-style: none;
 }
 
-/* Brand Base Colors */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Hero Section */
-.hero {
-  background-color: var(--deep-blue);
-  color: var(--bone);
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 4rem 2rem;
-  text-align: center;
-  backdrop-filter: blur(2px);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-  border-radius: 12px;
-  transition: all 0.3s ease;
-}
-
-/* Call to Action */
-section.call-to-action {
-  background-color: var(--deep-blue);
-  color: var(--bone);
-}
-
-/* Performance Rationale */
-section.performance-rationale {
-  background-color: var(--mid-blue);
-  color: var(--bone);
-}
-
-/* Client Profiles */
-section.client-profiles {
-  background-color: var(--teal);
-  color: var(--bone);
-}
-
-/* System Snapshot */
-section.system-snapshot {
-  background-color: var(--graphite);
-  color: var(--bone);
-}
-
-.system-snapshot h2 {
-  font-size: 2rem;
-  margin-bottom: 3rem;
-  letter-spacing: 0.05em;
-}
-
-.components {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  margin-bottom: 3rem;
-}
-
-.component {
-  background-color: #1a1a1a;
-  border: 1px solid #333;
-  padding: 2rem;
-  width: 300px;
-  transition: all 0.3s ease;
-}
-
-.component:hover {
-  background-color: var(--olive);
-  color: var(--carbon);
-}
-
-.component h3 {
-  font-size: 1.25rem;
-  margin-bottom: 1rem;
-}
-
-.component p {
-  font-size: 1rem;
-  opacity: 0.9;
-}
-
-/* Buttons */
+/* Button styles */
 .cta, button.secondary {
   background-color: transparent;
-  border: 1px solid var(--bone);
+  border: 1px solid var(--pastel-cadet);
   color: var(--bone);
   padding: 0.75rem 2rem;
   font-size: 1rem;
@@ -130,9 +56,9 @@ section.system-snapshot {
 
 .cta:hover,
 button.secondary:hover {
-  background-color: var(--rust);
-  border-color: var(--rust);
+  background-color: var(--pastel-terracotta);
   color: var(--carbon);
+  border-color: var(--pastel-terracotta);
 }
 
 button.cta {
@@ -141,6 +67,14 @@ button.cta {
 
 button.cta:hover {
   transform: translateY(-2px);
-  background-color: #e06a3c; /* rust */
-  color: #0d0d0d;           /* carbon */
+}
+
+/* Footer */
+.footer {
+  padding: 4rem 2rem;
+  color: var(--carbon);
+  background-color: var(--bone);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  text-align: center;
 }

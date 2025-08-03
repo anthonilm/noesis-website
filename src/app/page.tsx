@@ -1,8 +1,6 @@
 'use client';
 
 import React from 'react';
-import './home.css';
-import AnimatedSection from '../components/AnimatedSection';
 import Hero from '../components/Hero';
 import CallToAction from '../components/CallToAction';
 import PerformanceRationale from '../components/PerformanceRationale';
@@ -10,62 +8,39 @@ import ClientProfiles from '../components/ClientProfiles';
 import SystemSnapshot from '../components/SystemSnapshot';
 import DiagnosticLanding from '../components/DiagnosticLanding';
 import WorkWithUs from '../components/WorkWithUs';
+import AnimatedSection from '../components/AnimatedSection';
 
 export default function Home() {
   return (
     <main className="home-root">
       <Hero />
-
-      {/* 1. CTA */}
+      <CallToAction />
       <AnimatedSection>
-        <CallToAction />
+        <PerformanceRationale />
       </AnimatedSection>
-
-      {/* 3. Client Profiles */}
       <AnimatedSection>
         <ClientProfiles />
       </AnimatedSection>
-
-      {/* 4. System Snapshot */}
       <AnimatedSection>
-        <section className="system-snapshot">
-          <h2>The structure behind clarity and follow-through.</h2>
-          <div className="components">
-            <div className="component">
-              <h3>Diagnostic Stack</h3>
-              <p>
-                Tiered assessments that identify behavioral patterns, friction points,
-                and contextual triggers. Built for practical application.
-              </p>
-            </div>
-            <div className="component">
-              <h3>Protocol Library</h3>
-              <p>
-                Pre-built responses for breakdowns in function—interruption, fatigue, crisis.
-                Structured to be usable under stress.
-              </p>
-            </div>
-            <div className="component">
-              <h3>Custom Tracks</h3>
-              <p>
-                Modular plans tailored to your current goals, constraints, and level of stability.
-                Updated as your situation shifts.
-              </p>
-            </div>
-          </div>
-          <button className="cta secondary">→ Explore the Frameworks</button>
-        </section>
+        <SystemSnapshot />
       </AnimatedSection>
-
-      {/* 5. Diagnostic */}
       <AnimatedSection>
         <DiagnosticLanding />
       </AnimatedSection>
-
-      {/* Optional: Work With Us */}
       <AnimatedSection>
         <WorkWithUs />
       </AnimatedSection>
+      <footer className="footer">
+        <p>
+          We work with high-capacity professionals and teams seeking to achieve and sustain
+          peak performance—without burnout. My approach combines behavioral science, precision
+          coaching, and operational adaptation to help individuals and organizations meet ambitious
+          goals in ways that are scalable, sustainable, and aligned with long-term capacity. The
+          result is more consistent output, better decision-making under pressure, and a measurable
+          improvement in well-being and retention—while reducing costly losses in focus, engagement,
+          and reliability caused by burnout and mental fatigue.
+        </p>
+      </footer>
     </main>
   );
 }
