@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './ClientProfiles.css';
 
 const profiles = [
@@ -57,6 +57,22 @@ const profiles = [
 export default function ClientProfiles() {
   const [activeProfile, setActiveProfile] = useState<null | typeof profiles[0]>(null);
 
+  // Lock scroll & listen for Escape key
+  useEffect(() => {
+    if (activeProfile) {
+      document.body.style.overflow = 'hidden';
+
+      const handleKey = (e: KeyboardEvent) => {
+        if (e.key === 'Escape') setActiveProfile(null);
+      };
+      window.addEventListener('keydown', handleKey);
+      return () => {
+        window.removeEventListener('keydown', handleKey);
+        document.body.style.overflow = '';
+      };
+    }
+  }, [activeProfile]);
+
   return (
     <section className="client-profiles" data-bg="teal">
       <h2>Designed for People Who…</h2>
@@ -77,7 +93,7 @@ export default function ClientProfiles() {
 
       {activeProfile && (
         <div className="modal-overlay" onClick={() => setActiveProfile(null)}>
-          <div className="modal" onClick={(e) => e.stopPropagation()}>
+          <div className="modal fade-in" onClick={(e) => e.stopPropagation()}>
             <button className="close-button" onClick={() => setActiveProfile(null)}>
               ×
             </button>
