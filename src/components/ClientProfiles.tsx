@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import './ClientProfiles.css';
 
 const profiles = [
@@ -55,25 +55,44 @@ const profiles = [
 ];
 
 export default function ClientProfiles() {
+  const [activeProfile, setActiveProfile] = useState<null | typeof profiles[0]>(null);
+
   return (
-    <section className="client-profiles">
+    <section className="client-profiles" data-bg="teal">
       <h2>Designed for People Who…</h2>
+
       <div className="profile-scroll-container">
         {profiles.map((p) => (
           <div key={p.title} className="profile-card">
             <h3>{p.title}</h3>
             <p className="hook">{p.hook}</p>
-            <ul>
-              {p.points.map((pt, i) => (
-                <li key={i}>{pt}</li>
-              ))}
-            </ul>
-            <blockquote>{p.quote}</blockquote>
-            <p className="fit">{p.fit}</p>
+            <button className="read-more" onClick={() => setActiveProfile(p)}>
+              → Read More
+            </button>
           </div>
         ))}
       </div>
+
       <a href="/diagnostic" className="cta">→ Start the Diagnostic</a>
+
+      {activeProfile && (
+        <div className="modal-overlay" onClick={() => setActiveProfile(null)}>
+          <div className="modal" onClick={(e) => e.stopPropagation()}>
+            <button className="close-button" onClick={() => setActiveProfile(null)}>
+              ×
+            </button>
+            <h3>{activeProfile.title}</h3>
+            <p className="hook">{activeProfile.hook}</p>
+            <ul>
+              {activeProfile.points.map((pt, i) => (
+                <li key={i}>{pt}</li>
+              ))}
+            </ul>
+            <blockquote>{activeProfile.quote}</blockquote>
+            <p className="fit">{activeProfile.fit}</p>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

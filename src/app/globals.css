@@ -4,6 +4,11 @@
   --olive: #667752;
   --rust: #C56738;
   --bone: #ECE8E1;
+
+  /* New gradient colors */
+  --deep-blue: #0B1A2A;
+  --mid-blue: #11435C;
+  --teal: #1C7F7F;
 }
 
 * {
@@ -15,10 +20,10 @@
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
-  background: linear-gradient(to bottom, var(--carbon), var(--bone));
   color: var(--bone);
   line-height: 1.6;
   min-height: 100vh;
+  background-color: var(--deep-blue); /* fallback */
 }
 
 a {
@@ -30,8 +35,112 @@ ul {
   list-style: none;
 }
 
-/* Utility gradient container (used in layout.tsx) */
-.gradient-background {
+/* Brand Base Colors */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hero Section */
+.hero {
+  background-color: var(--deep-blue);
+  color: var(--bone);
   min-height: 100vh;
-  background: linear-gradient(to bottom, var(--carbon), var(--bone));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  text-align: center;
+  backdrop-filter: blur(2px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+/* Call to Action */
+section.call-to-action {
+  background-color: var(--deep-blue);
+  color: var(--bone);
+}
+
+/* Performance Rationale */
+section.performance-rationale {
+  background-color: var(--mid-blue);
+  color: var(--bone);
+}
+
+/* Client Profiles */
+section.client-profiles {
+  background-color: var(--teal);
+  color: var(--bone);
+}
+
+/* System Snapshot */
+section.system-snapshot {
+  background-color: var(--graphite);
+  color: var(--bone);
+}
+
+.system-snapshot h2 {
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  letter-spacing: 0.05em;
+}
+
+.components {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.component {
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  padding: 2rem;
+  width: 300px;
+  transition: all 0.3s ease;
+}
+
+.component:hover {
+  background-color: var(--olive);
+  color: var(--carbon);
+}
+
+.component h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.component p {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* Buttons */
+.cta, button.secondary {
+  background-color: transparent;
+  border: 1px solid var(--bone);
+  color: var(--bone);
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cta:hover,
+button.secondary:hover {
+  background-color: var(--rust);
+  border-color: var(--rust);
+  color: var(--carbon);
+}
+
+button.cta {
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+button.cta:hover {
+  transform: translateY(-2px);
+  background-color: #e06a3c; /* rust */
+  color: #0d0d0d;           /* carbon */
 }

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import NavbarWrapper from "./NavbarWrapper";
+import ScrollColorManager from "@/components/ScrollColorManager"; // 👈 Added import
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,10 +27,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <div className="gradient-background">
-          <NavbarWrapper />
-          {children}
-        </div>
+        <ScrollColorManager /> {/* 👈 Injected here */}
+        <NavbarWrapper />
+        {children}
       </body>
     </html>
   );

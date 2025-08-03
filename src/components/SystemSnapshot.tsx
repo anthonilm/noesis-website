@@ -5,7 +5,7 @@ import './SystemSnapshot.css';
 
 const SystemSnapshot = () => {
   return (
-    <section className="snapshot-section">
+    <section className="snapshot-section" data-bg="graphite">
       <div className="snapshot-grid">
         <div className="snapshot-block">
           <h2 className="snapshot-title">System Snapshot</h2>

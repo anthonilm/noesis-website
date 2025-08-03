@@ -5,7 +5,7 @@ import './PerformanceRationale.css';
 
 export default function PerformanceRationale() {
   return (
-    <section className="performance-rationale">
+    <section className="performance-rationale" data-bg="mid-blue">
       <div className="rationale-content">
         <p className="lead-line">A system is more durable than a mindset.</p>
         <h2>Why performance care requires infrastructure</h2>
