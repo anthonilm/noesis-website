@@ -1,0 +1,61 @@
+.work-with-us {
+  background-color: transparent; /* allow global gradient to flow */
+  color: var(--bone);
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+.work-with-us h2 {
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+  font-weight: 600;
+}
+
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.work-card {
+  background-color: var(--carbon);
+  padding: 2rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+.work-card:hover {
+  background-color: var(--olive);
+  color: var(--carbon);
+  transform: translateY(-4px);
+}
+
+.work-card h3 {
+  font-size: 1.25rem;
+  color: var(--bone);
+}
+
+.work-card p {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.work-card .cta {
+  margin-top: auto;
+  align-self: flex-start;
+  color: var(--bone);
+  border: 1px solid var(--bone);
+  padding: 0.5rem 1rem;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.work-card .cta:hover {
+  background-color: var(--bone);
+  color: var(--carbon);
+}

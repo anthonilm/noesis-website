@@ -1,0 +1,68 @@
+.diagnostic-landing {
+  background-color: transparent; /* allow background gradient to flow */
+  color: var(--bone);
+  padding: 6rem 2rem;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.diagnostic-landing h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+.diagnostic-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.diagnostic-form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  font-size: 1rem;
+  text-align: left;
+}
+
+.diagnostic-form input,
+.diagnostic-form textarea {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--bone);
+  background-color: transparent;
+  color: var(--bone);
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  border-radius: 4px;
+}
+
+.diagnostic-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  gap: 1rem;
+}
+
+button.cta,
+button.cta.secondary {
+  background-color: transparent;
+  border: 1px solid var(--bone);
+  color: var(--bone);
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  transition: background 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+
+button.cta:hover,
+button.cta.secondary:hover {
+  background-color: var(--bone);
+  color: var(--carbon);
+}

@@ -1,0 +1,64 @@
+.snapshot-section {
+  background-color: transparent;
+  color: var(--bone);
+  padding: 6rem 2rem;
+  backdrop-filter: blur(3px);
+  transition: all 0.3s ease;
+}
+
+.snapshot-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 2rem;
+  max-width: 1440px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.snapshot-block {
+  grid-column: span 6;
+  background-color: rgba(10, 10, 10, 0.8); /* semi-transparent carbon */
+  padding: 2rem;
+  border-radius: 12px;
+  transition: background 0.3s ease;
+}
+
+.snapshot-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--bone);
+}
+
+.snapshot-subtext {
+  font-size: 1.25rem;
+  color: #c1bfb8;
+  line-height: 1.6;
+}
+
+.snapshot-facts {
+  grid-column: span 6;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2rem;
+  background-color: rgba(10, 10, 10, 0.7);
+  padding: 2rem;
+  border-radius: 12px;
+}
+
+.fact {
+  text-align: center;
+  flex: 1 1 30%;
+}
+
+.fact-number {
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--rust);
+}
+
+.fact-label {
+  font-size: 1rem;
+  color: #ccc;
+}

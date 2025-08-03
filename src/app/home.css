@@ -1,0 +1,109 @@
+/* Base Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Brand Base Colors */
+:root {
+  --carbon: #0A0A0A;
+  --graphite: #2E2E2E;
+  --olive: #667752;
+  --rust: #C56738;
+  --bone: #ECE8E1;
+}
+
+/* Hero Section */
+.hero {
+  background-color: var(--carbon);
+  color: var(--bone);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  text-align: center;
+  backdrop-filter: blur(2px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+/* Call to Action, Rationale, etc. */
+section {
+  background: linear-gradient(to bottom, var(--carbon), var(--bone));
+  color: var(--carbon);
+  padding: 6rem 2rem;
+  text-align: center;
+  transition: background 0.4s ease;
+}
+
+/* System Snapshot */
+.system-snapshot {
+  background: linear-gradient(to bottom, var(--graphite), var(--bone));
+  color: var(--bone);
+}
+
+.system-snapshot h2 {
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  letter-spacing: 0.05em;
+}
+
+.components {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.component {
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  padding: 2rem;
+  width: 300px;
+  transition: all 0.3s ease;
+}
+
+.component:hover {
+  background-color: var(--olive);
+  color: var(--carbon);
+}
+
+.component h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.component p {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* Buttons */
+.cta, button.secondary {
+  background-color: transparent;
+  border: 1px solid var(--bone);
+  color: var(--bone);
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cta:hover,
+button.secondary:hover {
+  background-color: var(--rust);
+  border-color: var(--rust);
+  color: var(--carbon);
+}
+
+button.cta {
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+button.cta:hover {
+  transform: translateY(-2px);
+  background-color: #e06a3c; /* rust */
+  color: #0d0d0d;           /* carbon */
+}
